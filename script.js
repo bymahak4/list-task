@@ -2,7 +2,7 @@ const newTaskForm   = document.querySelector(".add-task-form");
 const addListTask   = document.querySelector(".list-task");
 const searchBar     = document.querySelector(".input-search-bar");
 
-//ADD
+
 const newTask = (e) => `<div class="task-container">
     <p class="task-name">${e}</p>
     <p class="task-item-delete">X</p>
@@ -12,9 +12,8 @@ const newTask = (e) => `<div class="task-container">
 newTaskForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const lengthErrorMsg    = document.querySelector(".length-error");
-    const taskbox           = newTaskForm.addTask.value.trim();
+    const taskbox           = newTaskForm.add.value.trim();
     
-
     if (taskbox.length > 0) {
         addListTask.innerHTML += newTask(taskbox);
         newTaskForm.reset();
@@ -22,12 +21,11 @@ newTaskForm.addEventListener("submit", (e) => {
             lengthErrorMsg.remove();
         }
     } else if (lengthErrorMsg === null) {
-        newTaskForm.innerHTML += `<p class="length-error">Ingrese una tarea</p>`;
+        newTaskForm.innerHTML += `<p class="text-center length-error">Ingrese una tarea</p>`;
     }
 });
 
 
-//DEL
 addListTask.addEventListener("click", (e) => {
     if (e.target.classList.contains("task-item-delete")) {
         e.target.parentElement.remove();
@@ -35,7 +33,6 @@ addListTask.addEventListener("click", (e) => {
 });
 
 
-//SEARCH
 const searchFunction = (input) => {
     const taskNameContainer = document.querySelectorAll(".task-container");
 
@@ -52,3 +49,4 @@ searchBar.addEventListener("keyup", () => {
     let input = searchBar.value.trim().toLocaleLowerCase();
     searchFunction(input);
 });
+

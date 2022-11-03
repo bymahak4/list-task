@@ -1,19 +1,34 @@
-html,body {
-    line-height: 1.3;
+/*BASE CSS*/
+html, body {
+    font-family: 'Open Sans', sans-serif !important;
     background: #0d2552 !important;
 }
 .abc {
     border: 1px solid #da1515;
 }
+h1 {
+    font-size: 2rem !important;
+    color: white;
+    margin: 1rem 0 !important;
+    font-weight: 600 !important;
+}
+p{
+    color: white;
+    font-weight: 700 !important;
+}
 
-.list-task {
+
+/*TASK CONTAINER*/
+.box-task {
+    max-height: 20rem !important;
+    overflow-y: auto !important; 
+}
+.jp.list-task {
     background-color: rgb(9, 28, 63);
-    width: 100%;
     border-radius: 10px;
-    max-height: 50%;
-    margin: 20px 0;
-    overflow-y: auto;
     line-height: normal;
+    padding: 10px 0;
+    
 }
 .task-container {
     background-color: rgb(25, 58, 119);
@@ -35,6 +50,11 @@ html,body {
 }
 
 
+/*SEARCH AND ADD*/
+.input-search-bar::placeholder, .add-task-input::placeholder {
+    color: #587dc2;
+    font-size: 1rem;
+}
 .input-search-bar, 
 .add-task-input {
     height: 2.3em;
@@ -45,13 +65,19 @@ html,body {
     border: none;
     border-radius: 0.4375rem;
 }
-
-
 .filtered {
     display: none;
 }
+.add-task-label {
+    display: block;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
 
+
+/*MSG*/
 .length-error {
     color: red;
     margin-top: 0.625rem;
-  }
+}
